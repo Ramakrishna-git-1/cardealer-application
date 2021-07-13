@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2021-07-07 15:18:59.364486",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2021-07-07 15:53:49.171666",
+ "modified_by": "Administrator",
+ "module": "Cardealer",
+ "name": "sales-invoice-report",
+ "owner": "Administrator",
+ "page_name": "Sales Invoice Report",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Sales Invoice Report"
+}

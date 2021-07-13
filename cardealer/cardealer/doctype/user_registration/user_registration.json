@@ -1,0 +1,235 @@
+{
+ "autoname": "UR.###",
+ "creation": "2021-06-08 10:47:03.423641",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "salutation",
+  "first_name",
+  "last_name",
+  "status",
+  "column_break_5",
+  "username",
+  "password",
+  "gender",
+  "posting_date",
+  "section_break_9",
+  "lead_creation_section",
+  "address_line1",
+  "address_line2",
+  "country",
+  "state",
+  "city",
+  "column_break_12",
+  "pincode",
+  "territories",
+  "email",
+  "mobile_no",
+  "section_break_21",
+  "customer_creation_section",
+  "customer_type",
+  "customer_group",
+  "section_break_26",
+  "vehicle_registration_info_section",
+  "vehicle_registration_info"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "label": "Password"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "salutation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Salutation",
+   "options": "Salutation",
+   "reqd": 1
+  },
+  {
+   "default": "Lead",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Lead\nOpportunity\nCustomer"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "eval:doc.status===\"Lead\"",
+   "fieldname": "lead_creation_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Creation Section"
+  },
+  {
+   "default": "India",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "territories",
+   "fieldtype": "Link",
+   "label": "Territories",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "eval:doc.status===\"Customer\"",
+   "fieldname": "customer_creation_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Creation Section"
+  },
+  {
+   "fieldname": "address_line1",
+   "fieldtype": "Data",
+   "label": "Address Line1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line2",
+   "fieldtype": "Data",
+   "label": "Address Line2"
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Customer Type",
+   "options": "Company\nIndividual"
+  },
+  {
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "vehicle_registration_info",
+   "fieldtype": "Table",
+   "label": "Vehicle Registration Info",
+   "options": "Vehicle Registration"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "vehicle_registration_info_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Registration Info Section"
+  }
+ ],
+ "modified": "2021-07-05 16:45:11.458373",
+ "modified_by": "Administrator",
+ "module": "Cardealer",
+ "name": "User Registration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,64 @@
+{
+ "autoname": "Vehicle.#####",
+ "creation": "2021-06-21 20:20:22.917452",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_type",
+  "vehicle_name",
+  "vehicle_image",
+  "vehicle_description",
+  "vehicle_select"
+ ],
+ "fields": [
+  {
+   "default": "Vehicles",
+   "fetch_from": "item.item_group",
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle Type",
+   "options": "Item Group"
+  },
+  {
+   "fetch_from": "Item.image",
+   "fieldname": "vehicle_image",
+   "fieldtype": "Attach Image",
+   "label": "Vehicle Image",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "Item.description",
+   "fieldname": "vehicle_description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Vehicle Description"
+  },
+  {
+   "fetch_from": "Item.item_name",
+   "fieldname": "vehicle_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle Name ",
+   "options": "Item"
+  },
+  {
+   "fieldname": "vehicle_select",
+   "fieldtype": "Link",
+   "label": "Vehicle Select",
+   "options": "Item"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-07-12 14:24:11.133983",
+ "modified_by": "Administrator",
+ "module": "Cardealer",
+ "name": "Vehicle Registration",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

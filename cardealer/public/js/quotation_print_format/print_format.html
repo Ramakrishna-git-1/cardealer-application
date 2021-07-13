@@ -1,0 +1,83 @@
+ <html>
+<body>
+ <h3 style= "text-align: right;"><b>{{ doc.select_print_heading or "QUOTATION" }}</b></h3>
+ <img width="100" height="100" src="{{frappe.db.get_value("Company",doc.company,"company_logo")}}"/>
+  
+ <hr style="width:100%;text-align:left;margin-left:0;height:0px;">
+ <p><b>{{doc.company}}</b></p>
+ <p style = "font-size:16px;">{{ frappe.db.get_value("Company", doc.company, "company_description") }}</p>
+ <p>Email-id: <a style="color:blue;" href='{{ frappe.db.get_value("Company", doc.company, "email") }}'>{{ frappe.db.get_value("Company", doc.company, "email") }}</a></p>
+ <p>Website: <a style="color:blue;" href='{{ frappe.db.get_value("Company", doc.company, "website") }}'>{{ frappe.db.get_value("Company", doc.company, "website") }}</a></p>
+ <hr style="width:100%;text-align:left;margin-left:0;height:0px;">
+ <p style = "font-size:12px;"><b>CIN:</b>RI2453r7476556</p>
+ <p style = "font-size:12px;"><b>GSTIN/UIN:</b>2453447907899</p>
+ <hr style="width:100%;text-align:left;margin-left:0;height:0px;">
+<p style="float:left;"><b>Customer Name:</b> {{ doc.customer_name }}</br><span style= "float: right;"><b>Quotation No:</b>{{doc.naming_series}}</span>
+</p>
+<hr style="width:100%;text-align:left;margin-left:0;height:0px;">
+&nbsp;&nbsp;&nbsp;<p style="margin:right;">{{ doc.address_display}}</br><span style= "float: right;"><b>Date:</b>{{doc.transaction_date}}</span>
+<hr style="width:100%;text-align:left;margin-left:0;height:2px;">
+<p style="float:left;">GSTIN:2453447907899</p>
+<p style="float:left;"><b>Customer Name:</b> {{ doc.customer_name }}
+<p style= "float: right;"><b>Contact No:</b>{{doc.contact_mobile}}</p>
+<hr style="width:100%;text-align:left;margin-left:0;height:2px;">
+
+
+
+<div class="row">
+</div>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>Sr</th>
+      <th>Product Code/Service Ticket No.e</th>
+      <th>Product Image</th>
+      <th class="text-right">HSN/SAC</th>
+      <th class="text-right">IGST Rate</th>
+      <th class="test-rigth">Description</th>
+      <th class="test-rigth">Qty</th>
+      <th class="text-right">Amount</th>
+    </tr>
+    {%- for row in doc.items -%}
+    <tr>
+      <td style="width: 3%;">{{ row.idx }}</td>
+      <td style="width: 20%;">
+        {{ row.item_name }}
+        {% if row.item_code != row.item_name -%}
+        <br>Item Code: {{ row.item_code}}
+        {%- endif %}
+      </td>
+      <td style="width: 37%;">
+        <!--<div style="border: 0px;">{{ row.image }}</div></td>-->
+       <div style="border: 0px;"><img width="50" height="50" src="{{row.image}}"/></div></td>
+        
+        
+      <td style="width: 10%; text-align: right;">264635463</td>
+      <td style="width: 15%; text-align: right;">{{
+        row.rate}}</td>
+      <td style="width: 37%;">
+        <div style="border: 0px;">{{ row.description}}</div></td>
+      <td style="width: 37%;">
+        <div style="border: 0px;">{{ row.qty}}</div></td>
+      <td style="width: 15%; text-align: right;">{{
+        row.amount}}</td>
+    </tr>
+    {%- endfor -%}
+  
+  </tbody>
+</table>
+<p style="text-align:right;"><b>Subtotal:</b> {{doc.total}}</p>
+<p style="text-align:right;"><b>Discount:</b> {{doc.discount_amount}}</p>
+<p style="text-align:right;"><b>IGST:</b> 18% {{doc.grand_total}}</p>
+<p style="text-align:right;"><b>Grand Total:</b>{{doc.grand_total}}</p>
+<p style="text-align:right;"><b>In Word:</b> {{doc.in_words}}</p>
+<hr style="width:100%;text-align:left;margin-left:0;height:2px;"><br><br>
+<p The information contained in this document is believed to be correct, but Ramakrishna Industries accepts no liability for any errors and reserves the right to alter specifications without notice</p>
+<p style= "float: left;"><b>Terms and Conditions:</b></p><br><br><br>
+<p>{{doc.terms}}</p><br><br><br>
+<p>for {{doc.company}}</p></br>
+<p style="float: left;"><b>Prepared By</b></p><br><br>
+ 
+<p style="float: left;"><b>Sales Head</b><span style="float: right;"><b> Sales Manager</b><br></p>
+<p style="float: left;">Electronically Authorised By<span style="float: right;">Electronically Authorised By</span></p>
+</html>

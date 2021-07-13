@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include cardealer *.css
+recursive-include cardealer *.csv
+recursive-include cardealer *.html
+recursive-include cardealer *.ico
+recursive-include cardealer *.js
+recursive-include cardealer *.json
+recursive-include cardealer *.md
+recursive-include cardealer *.png
+recursive-include cardealer *.py
+recursive-include cardealer *.svg
+recursive-include cardealer *.txt
+recursive-exclude cardealer *.pyc
